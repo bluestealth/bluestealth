@@ -1,5 +1,7 @@
-@import "variables.scss";
-@import "mixins.scss";
+@import "variables";
+@import "bootstrap";
+
+$primary: $brand-primary;
 
 body {
     width: 100%;
@@ -40,8 +42,6 @@ p {
 
 a {
     color: $primary;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     &:hover,
     &:focus {
@@ -80,8 +80,6 @@ a {
     }
     .nav {
             a {
-                -webkit-transition: background .3s ease-in-out;
-                -moz-transition: background .3s ease-in-out;
                 transition: background .3s ease-in-out;
                 &:hover {
                     color: fade(white, 80%);
@@ -109,8 +107,6 @@ a {
         border-bottom: none;
         letter-spacing: 1px;
         background: transparent;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
         &.top-nav-collapse {
             padding: 0;
@@ -127,12 +123,20 @@ a {
     padding: 100px 0;
     text-align: center;
     color: white;
-    background: url(../img/intro-bg-large.jpg) no-repeat bottom center scroll;
+    @media(max-width:480px) {
+    	background: url(../img/intro-bg-sm.jpg) no-repeat bottom center scroll;
+    }
+    @media(max-width:640px) {    
+    	background: url(../img/intro-bg-md.jpg) no-repeat bottom center scroll;
+    }
+    @media(max-width:1024px) {
+        background: url(../img/intro-bg-lg.jpg) no-repeat bottom center scroll;
+    }
+    @media(min-width:1025px) {
+        background: url(../img/intro-bg-xl.jpg) no-repeat bottom center scroll;
+    }
     background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
     .intro-body {
         display: table-cell;
         vertical-align: middle;
@@ -167,8 +171,6 @@ a {
     font-size: 40px;
     color: white;
     background: transparent;
-    -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
     &:hover,
     &:focus {
@@ -177,55 +179,32 @@ a {
         background: fade(white, 10%);
     }
     i.animated {
-        -webkit-transition-property: -webkit-transform;
-        -webkit-transition-duration: 1s;
-        -moz-transition-property: -moz-transform;
-        -moz-transition-duration: 1s;
+        transition-property: transform;
+        transition-duration: 1s;
     }
     &:hover {
         i.animated {
-            -webkit-animation-name: pulse;
-            -moz-animation-name: pulse;
-            -webkit-animation-duration: 1.5s;
-            -moz-animation-duration: 1.5s;
-            -webkit-animation-iteration-count: infinite;
-            -moz-animation-iteration-count: infinite;
-            -webkit-animation-timing-function: linear;
-            -moz-animation-timing-function: linear;
+            animation-name: pulse;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
     }
 }
 
-@-webkit-keyframes pulse {    
+@keyframes pulse {    
     0% {
-        -webkit-transform: scale(1);
+        transform: scale(1);
         transform: scale(1);
     }
 
     50% {
-        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
         transform: scale(1.2);
     }
 
     100% {
-        -webkit-transform: scale(1);
         transform: scale(1);
-    }
-}
-
-@-moz-keyframes pulse {    
-    0% {
-        -moz-transform: scale(1);
-        transform: scale(1);
-    }
-
-    50% {
-        -moz-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-
-    100% {
-        -moz-transform: scale(1);
         transform: scale(1);
     }
 }
@@ -238,12 +217,20 @@ a {
     width: 100%;
     padding: 50px 0;
     color: white;
-    background: url(../img/downloads-bg-large.jpg) no-repeat center center scroll;
+    @media(max-width:480px) {
+    	background: url(../img/downloads-bg-sm.jpg) no-repeat center center scroll;
+    }
+    @media(max-width:640px) {    
+    	background: url(../img/downloads-bg-md.jpg) no-repeat center center scroll;
+    }
+    @media(max-width:1024px) {
+        background: url(../img/downloads-bg-lg.jpg) no-repeat center center scroll;
+    }
+    @media(min-width:1025px) {
+        background: url(../img/downloads-bg-xl.jpg) no-repeat center center scroll;
+    }
     background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
 }
 
 @media(min-width:767px) {
@@ -260,8 +247,6 @@ a {
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     border-radius: 0;
 }
@@ -340,5 +325,6 @@ img::-moz-selection {
 }
 
 body {
-    webkit-tap-highlight-color: fade(white, 20%);
+    tap-highlight-color: fade(white, 20%);
 }
+
