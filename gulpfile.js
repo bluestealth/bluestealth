@@ -1,5 +1,8 @@
 let gulp = require('gulp');
 let sass = require('gulp-sass');
+let sourcemaps = require('gulp-sourcemaps');
+let autoprefixer = require('gulp-autoprefixer');
+let cleancss = require('gulp-clean-css');
 let file = require('gulp-file');
 let pug = require('gulp-pug');
 let sitemap = require('gulp-sitemap');
@@ -46,7 +49,7 @@ let faviconConfig = {
 			pictureAspect: 'noChange',
 			themeColor: '#ffffff',
 			manifest: {
-				name: 'bluestealth.pw',
+				name: config.SITE_BASE_URL.replace(/^(http|https):\/\/www\./, ''),
 				display: 'standalone',
 				orientation: 'notSet',
 				onConflict: 'override',
@@ -93,7 +96,7 @@ gulp.task('robots_txt', () => {
 gulp.task('pug', () => {
 	return gulp.src(['./src/templates/index.pug'])
 		.pipe(pug({
-
+				pretty: true
 		}))
 		.pipe(gulp.dest(config.DIST_DIR));
 });
@@ -103,6 +106,9 @@ gulp.task('css', () => {
 		.pipe(sass({
 			includePaths: [config.BOOTSTRAP_DIR + '/scss']
 		}))
+		.pipe(autoprefixer({
+			browsers: ['ie >= 10', 'last 2 versions']
+		}))
 		.pipe(gulp.dest(config.DIST_DIR + '/css'));
 });
 
@@ -110,7 +116,7 @@ gulp.task('generate-favicon', () => {
 	return realFavicon.generateFavicon(faviconConfig);
 });
 
-gulp.task('inject-favicon-markups', () => {
+gulp.task('inject-favicon-markups', ['pug'], () => {
 	let html = JSON.parse(fs.readFileSync(faviconConfig.markupFile)).favicon.html_code;
 	return gulp.src(['dist/*.html', '!dist/' + config.GOOGLE_SITE_VERIFICATION])
 		.pipe(realFavicon.injectFaviconMarkups(html))
@@ -150,8 +156,8 @@ gulp.task('images', () => {
     .pipe(gulp.dest(config.DIST_DIR + '/img'));
 });
 
-gulp.task('sitemap', () => {
-    return gulp.src([config.DIST_DIR + '/*.html', '!' + config.DIST_DIR + '/' + config.GOOGLE_SITE_VERIFICATION], { read: false })
+gulp.task('sitemap', ['pug'], () => {
+    gulp.src([config.DIST_DIR + '/*.html', '!' + config.DIST_DIR + '/' + config.GOOGLE_SITE_VERIFICATION], { read: false })
 	.pipe(sitemap({
 		siteUrl: config.SITE_BASE_URL,
 		mappings:[{
@@ -173,7 +179,7 @@ gulp.task('copy', () => {
 		config.BOOTSTRAP_DIR + '/dist/js/bootstrap{.js,.min.js}',
 		config.JQUERY_DIR + '/dist/jquery{.js,.min.js,.min.map}',
 		config.TETHER_DIR + '/dist/js/tether{.js,.min.js}',
-		'./static/js/grayscale.js'
+		'./static/js/*{.js,min.js}'
 	]).pipe(gulp.dest(config.DIST_DIR + '/js'));
 	
 	gulp.src([
