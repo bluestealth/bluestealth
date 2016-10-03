@@ -5,10 +5,10 @@
   "main": "grunt build",
   "scripts": {},
   "author": "Michael Ryan Dempsey",
-  "license": "apache2",
+  "license": "apache-2.0",
   "devDependencies": {},
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.0.0-alpha.4",
     "font-awesome": "^4.6.3",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
