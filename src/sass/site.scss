@@ -13,16 +13,15 @@ a {
     }
 }
 
-.light {
-    font-weight: 400;
-}
-
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid fade(white, 30%);
     text-transform: uppercase;
     background-color: black;
     .navbar-brand {
+    	span {
+          font-weight: 400;
+    	}
         font-weight: 700;
         &:focus {
             outline: none;
@@ -36,33 +35,6 @@ a {
        &:active {
          outline: none;
        }
-    }
-    a {
-        color: white;
-    }
-    .nav {
-            a {
-                transition: background .3s ease-in-out;
-                &:hover {
-                    color: fade(white, 80%);
-                    outline: none;
-                    background-color: transparent;
-                }
-                &:focus,
-                &:active {
-                    outline: none;
-                    background-color: transparent;
-                }
-            }
-            &.active {
-                outline: none;
-                a {
-                    background-color: fade(white, 30%);
-                    &:hover {
-                        color: white;
-                    }
-                }
-            }
     }
     @media(min-width: map-get($grid-breakpoints, md)) {
         padding: 20px 0;
@@ -170,21 +142,16 @@ a {
     }
 }
 
-.content-section {
-    padding-top: 100px;
-    @media(min-width:767px) {
-      .content-section {
-         padding-top: 150px;
-      }
-  }
+section {
+    padding-top: 200px;
+    min-height: 100vh;
+}
+
+#social {
+    padding-top: 50px;
 }
 
 #resume {
-  padding: 100px 0;
-}
-
-#resume > div.container-fluid {
-    padding: 50px 0;
     h2, p {
         text-shadow: 0 0 10px black;
     }
@@ -202,9 +169,14 @@ a {
     }
     background-color: black;
     background-size: cover;
-}
-
-@media(min-width:767px) {
+   .container {
+   
+   }
+   	.btn {
+		    @media(max-width: map-get($grid-breakpoints, sm)) {
+		    	margin-top: 20px;
+		    }
+	}
 }
 
 .btn {

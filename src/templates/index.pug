@@ -9,15 +9,15 @@ html(lang='en')
         .navbar-nav
           a.navbar-brand.page-scroll(href='#page-top')
             i.fa.fa-home
-            span.light Home
+            span Home
           button.navbar-toggler.hidden-sm-up.pull-xs-right(type="button",data-toggle="collapse",data-target="#navbarLinks",aria-controls="navbarLinks",aria-expanded="false",aria-label="Toggle navigation")
             i.fa.fa-bars
         // Collect the nav links, forms, and other content for toggling
         div.collapse.navbar-toggleable-xs.pull-xs-right#navbarLinks
           ul(class="nav navbar-nav", role="tablist")
-            li.nav-item
+            li.nav-item.nav-pills
               a.nav-link.page-scroll(href='#resume') Resume
-            li.nav-item
+            li.nav-item.nav-pills
               a.nav-link.page-scroll(href='#contact') Contact
     // Intro Header
     header.intro
@@ -31,25 +31,24 @@ html(lang='en')
                 i.fa.fa-angle-double-down.animated
     // Download Section
     section#resume
-      .container-fluid
         .container.text-xs-center
           .row.flex-items-xs-center
-            .col-md-8
+            .col-xs-12
               h2 Download Resume
               p You can download my resume in the formats below
-              ul.list-inline
-                li.list-inline-item
-                  a.btn.btn-primary.btn-lg(href='doc/Resume.pdf')
-                    i.fa.fa-file-pdf-o.fa-fw
-                    | PDF
-                li.list-inline-item
-                  a.btn.btn-primary.btn-lg(href='doc/Resume.docx')
-                    i.fa.fa-file-word-o.fa-fw
-                    | DOC
-                li.list-inline-item
-                  a.btn.btn-primary.btn-lg(href='doc/Resume.odt')
-                    i.fa.fa-file-text-o.fa-fw
-                    | ODT
+          .row.flex-items-xs-center
+            .col-xs-12.col-sm-4
+              a.btn.btn-primary.btn-lg(href='doc/Resume.pdf')
+                i.fa.fa-file-pdf-o.fa-fw
+                | PDF
+            .col-xs-12.col-sm-4
+              a.btn.btn-primary.btn-lg(href='doc/Resume.docx')
+                i.fa.fa-file-word-o.fa-fw
+                | DOC
+            .col-xs-12.col-sm-4
+              a.btn.btn-primary.btn-lg(href='doc/Resume.odt')
+                i.fa.fa-file-text-o.fa-fw
+                | ODT
     // Contact Section
     section#contact.container.content-section.text-xs-center
       .row.flex-items-xs-center
@@ -61,9 +60,7 @@ html(lang='en')
             li
               a.contact-details(href='mailto:bluestealth@bluestealth.pw')
                 i.fa.fa-envelope-o.fa-fw
-                span
-                  | bluestealth@bluestealth.pw
-                  span
+                | bluestealth@bluestealth.pw
             li
               a.contact-details(href='mailto:michael.ryan.dempsey@gmail.com')
                 i.fa.fa-envelope-o.fa-fw
@@ -73,23 +70,22 @@ html(lang='en')
                 i.fa.fa-phone.fa-fw
                 | (571) 308-9167
           p Bainbridge IS, WA 98110
-    //Social Buttons
-    section#social.container.text-xs-center
-      .row
+      //Social Buttons
+      .row.text-xs-center#social
         .col-xs-12.col-md-6.col-lg-3
-          a.btn.btn-secondary.btn-social.btn-lg(href='https://github.com/bluestealth')
+          a.btn.btn-secondary.btn-social.btn-lg(href='https://github.com/bluestealth', target='_blank')
             i.fa.fa-github.fa-fw
             span.network-name Github
         .col-xs-12.col-md-6.col-lg-3
-          a.btn.btn-secondary.btn-social.btn-lg(href='http://codepen.io/bluestealth/')
+          a.btn.btn-secondary.btn-social.btn-lg(href='http://codepen.io/bluestealth/', target='_blank')
             i.fa.fa-codepen.fa-fw
             span.network-name Codepen
         .col-xs-12.col-md-6.col-lg-3
-          a.btn.btn-secondary.btn-social.btn-lg(href='https://plus.google.com/111588817619649017844/posts')
+          a.btn.btn-secondary.btn-social.btn-lg(href='https://plus.google.com/111588817619649017844/posts', target='_blank')
             i.fa.fa-google-plus.fa-fw
             span.network-name Google
         .col-xs-12.col-md-6.col-lg-3
-          a.btn.btn-secondary.btn-social.btn-lg(href='https://twitter.com/bluestealth001')
+          a.btn.btn-secondary.btn-social.btn-lg(href='https://twitter.com/bluestealth001', target='_blank')
             i.fa.fa-twitter.fa-fw
             span.network-name Twitter
     footer

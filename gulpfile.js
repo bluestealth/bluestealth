@@ -1,5 +1,8 @@
+'use strict';
+
 let gulp = require('gulp');
 let sass = require('gulp-sass');
+let rename = require("gulp-rename");
 let sourcemaps = require('gulp-sourcemaps');
 let autoprefixer = require('gulp-autoprefixer');
 let cleancss = require('gulp-clean-css');
@@ -106,9 +109,20 @@ gulp.task('css', () => {
 		.pipe(sass({
 			includePaths: [config.BOOTSTRAP_DIR + '/scss']
 		}))
+		.pipe(sourcemaps.init())
 		.pipe(autoprefixer({
 			browsers: ['ie >= 10', 'last 2 versions']
 		}))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest(config.DIST_DIR + '/css'));
+});
+
+gulp.task('minifycss', ['css'], () => {
+	return gulp.src(config.DIST_DIR + '/css/site.css')
+		.pipe(sourcemaps.init())
+		.pipe(cleancss({sourceMap: true}))
+		.pipe(rename({extname: '.min.css'}))
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(config.DIST_DIR + '/css'));
 });
 
@@ -194,4 +208,4 @@ gulp.task('copy', () => {
 	gulp.src(config.DOC_DIR + '/*{.docx,.pdf,.odt}').pipe(gulp.dest(config.DIST_DIR + '/doc'));
 });
 
-gulp.task('default', ['copy', 'css', 'images', 'pug', 'inject-favicon-markups', 'sitemap']);
+gulp.task('default', ['copy', 'css', 'minifycss', 'images', 'pug', 'inject-favicon-markups', 'sitemap']);

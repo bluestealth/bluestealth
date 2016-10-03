@@ -14,6 +14,7 @@
     "gulp-file": "^0.3.0",
     "gulp-pug": "^3.0.4",
     "gulp-real-favicon": "^0.2.1",
+    "gulp-rename": "^1.2.2",
     "gulp-responsive": "^2.6.0",
     "gulp-sass": "^2.3.2",
     "gulp-sitemap": "^4.2.0",
