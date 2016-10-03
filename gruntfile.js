@@ -1,8 +1,14 @@
 module.exports = function(grunt) {
+	var params = grunt.file.readYAML("./site.config") || {};
+	if(params.GOOGLE_SITE_VERIFICATION)
+		grunt.file.write('./dist/' + params.GOOGLE_SITE_VERIFICATION, "google-site-verification: " + params.GOOGLE_SITE_VERIFICATION);
+	else
+		params.GOOGLE_SITE_VERIFICATION = 'google*c.html';
 
-	var params = grunt.file.readYAML("./site.config");
+	if(params.ROBOTS)
+		grunt.file.write('./dist/robots.txt', params.ROBOTS.join('\n'));
 
-	grunt.file.write('./dist/' + params.GOOGLE_SITE_VERIFICATION, "google-site-verification: " + params.GOOGLE_SITE_VERIFICATION);
+
 	grunt.initConfig({
 		pug: {
 			compile: {
@@ -55,7 +61,7 @@ module.exports = function(grunt) {
 				dest: './dist/',
 				options: {
 					iconsPath: '/',
-					html: [ 'dist/*.html', '!dist/' + params.GOOGLE_SITE_VERIFICATION ],
+					html: [ 'dist/*.html', '!dist/' + params.GOOGLE_SITE_VERIFICATION],
 					design: {
 						ios: {
 							pictureAspect: 'noChange',
