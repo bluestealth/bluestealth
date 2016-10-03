@@ -72,23 +72,25 @@ html(lang='en')
                 i.fa.fa-phone.fa-fw
                 | (571) 308-9167
           p Bainbridge IS, WA 98110
-          ul.list-inline.banner-social-buttons
-            li.list-inline-item
-              a.btn.btn-secondary.btn-lg(href='https://github.com/bluestealth')
-                i.fa.fa-github.fa-fw
-                span.network-name Github
-            li.list-inline-item
-              a.btn.btn-secondary.btn-lg(href='http://codepen.io/bluestealth/')
-                i.fa.fa-codepen.fa-fw
-                span.network-name Codepen
-            li.list-inline-item
-              a.btn.btn-secondary.btn-lg(href='https://plus.google.com/111588817619649017844/posts')
-                i.fa.fa-google-plus.fa-fw
-                span.network-name Google+
-            li.list-inline-item
-              a.btn.btn-secondary.btn-lg(href='https://twitter.com/bluestealth001')
-                i.fa.fa-twitter.fa-fw
-                span.network-name Twitter
+    //Social Buttons
+    section#social.container.text-xs-center
+      .row
+        .col-xs-12.col-md-6.col-lg-3
+          a.btn.btn-secondary.btn-social.btn-lg(href='https://github.com/bluestealth')
+            i.fa.fa-github.fa-fw
+            span.network-name Github
+        .col-xs-12.col-md-6.col-lg-3
+          a.btn.btn-secondary.btn-social.btn-lg(href='http://codepen.io/bluestealth/')
+            i.fa.fa-codepen.fa-fw
+            span.network-name Codepen
+        .col-xs-12.col-md-6.col-lg-3
+          a.btn.btn-secondary.btn-social.btn-lg(href='https://plus.google.com/111588817619649017844/posts')
+            i.fa.fa-google-plus.fa-fw
+            span.network-name Google
+        .col-xs-12.col-md-6.col-lg-3
+          a.btn.btn-secondary.btn-social.btn-lg(href='https://twitter.com/bluestealth001')
+            i.fa.fa-twitter.fa-fw
+            span.network-name Twitter
     footer
       include ./footer.pug
       //Page Specific Javascript
