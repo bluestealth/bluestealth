@@ -1,0 +1,111 @@
+doctype html
+html(lang='en')
+  head
+    include ./head.pug
+  body#page-top(data-spy='scroll', data-target='.navbar-fixed-top')
+    // Navigation
+    nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+            i.fa.fa-bars
+          a.navbar-brand.page-scroll(href='#page-top')
+            i.fa.fa-home
+            span.light Home
+        // Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+          ul.nav.navbar-nav
+            // Hidden li included to remove active class from about link when scrolled up past about section
+            li.hidden
+              a(href='#page-top')
+            //
+              <li>
+              <a class="page-scroll" href="#about">About</a>
+              </li>
+            li
+              a.page-scroll(href='#resume') Resume
+            li
+              a.page-scroll(href='#contact') Contact
+        // /.navbar-collapse
+      // /.container
+    // Intro Header
+    header.intro
+      .intro-body
+        .container
+          .row
+            .col-md-8.col-md-offset-2
+              h1.brand-heading Bluestealth
+              p.intro-text Software Developer
+              a.btn.btn-circle.page-scroll(href='#resume')
+                i.fa.fa-angle-double-down.animated
+    //
+      About Section
+      <section id="about" class="container content-section text-center">
+      <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+      <h2>About Bluestealth</h2>
+      <p></p>
+      </div>
+      </div>
+      </section>
+    // Download Section
+    section#resume.content-section.text-center
+      .resume-section
+        .container
+          .col-lg-8.col-lg-offset-2
+            h2 Download Resume
+            p You can download my resume in the formats below
+            ul.list-inline
+              li
+                a.btn.btn-download.btn-lg(href='doc/Resume.pdf')
+                  i.fa.fa-file-pdf-o.fa-fw
+                  | PDF
+              li
+                a.btn.btn-download.btn-lg(href='doc/Resume.docx')
+                  i.fa.fa-file-word-o.fa-fw
+                  | DOC
+              li
+                a.btn.btn-download.btn-lg(href='doc/Resume.odt')
+                  i.fa.fa-file-text-o.fa-fw
+                  | ODT
+    // Contact Section
+    section#contact.container.content-section.text-center
+      .row
+        .col-lg-8.col-lg-offset-2
+          h2 Contact Bluestealth
+          p
+            | Feel free to email me about potential job offers, comments about the site, or just to say hi.
+          ul.list-unstyled
+            li
+              a.contact-details(href='mailto:bluestealth@bluestealth.pw')
+                i.fa.fa-envelope-o.fa-fw
+                span
+                  | bluestealth@bluestealth.pw
+                  span
+            li
+              a.contact-details(href='mailto:michael.ryan.dempsey@gmail.com')
+                i.fa.fa-envelope-o.fa-fw
+                | michael.ryan.dempsey@gmail.com
+            li
+              a.contact-details(href='tel:+15713089167')
+                i.fa.fa-phone.fa-fw
+                | (571) 308-9167
+          p Bainbridge IS, WA 98110
+          ul.list-inline.banner-social-buttons
+            li
+              a.btn.btn-default.btn-lg(href='https://github.com/bluestealth')
+                i.fa.fa-github.fa-fw
+                span.network-name Github
+            li
+              a.btn.btn-default.btn-lg(href='http://codepen.io/bluestealth/')
+                i.fa.fa-codepen.fa-fw
+                span.network-name Codepen
+            li
+              a.btn.btn-default.btn-lg(href='https://plus.google.com/111588817619649017844/posts')
+                i.fa.fa-google-plus.fa-fw
+                span.network-name Google+
+            li
+              a.btn.btn-default.btn-lg(href='https://twitter.com/bluestealth001')
+                i.fa.fa-twitter.fa-fw
+                span.network-name Twitter
+    include ./footer.pug
