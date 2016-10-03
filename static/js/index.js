@@ -12,8 +12,3 @@ $(window).scroll(function() {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
 });
-
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});

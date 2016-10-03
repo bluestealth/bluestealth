@@ -22,36 +22,37 @@ html(lang='en')
     header.intro
       .intro-body
         .container
-          .row
-            .col-lg-8.offset-lg-2
+          .row.flex-items-xs-center
+            .col-lg-8
               h1.brand-heading Bluestealth
               p.intro-text Software Developer
               a.btn.btn-circle.page-scroll(href='#resume')
                 i.fa.fa-angle-double-down.animated
     // Download Section
     section#resume
-      div
+      .container-fluid
         .container.text-xs-center
-         .col-md-8.offset-md-2
-          h2 Download Resume
-          p You can download my resume in the formats below
-          ul.list-inline
-            li.list-inline-item
-              a.btn.btn-download.btn-lg(href='doc/Resume.pdf')
-                i.fa.fa-file-pdf-o.fa-fw
-                | PDF
-            li.list-inline-item
-              a.btn.btn-download.btn-lg(href='doc/Resume.docx')
-                i.fa.fa-file-word-o.fa-fw
-                | DOC
-            li.list-inline-item
-              a.btn.btn-download.btn-lg(href='doc/Resume.odt')
-                i.fa.fa-file-text-o.fa-fw
-                | ODT
+          .row.flex-items-xs-center
+            .col-md-8
+              h2 Download Resume
+              p You can download my resume in the formats below
+              ul.list-inline
+                li.list-inline-item
+                  a.btn.btn-download.btn-lg(href='doc/Resume.pdf')
+                    i.fa.fa-file-pdf-o.fa-fw
+                    | PDF
+                li.list-inline-item
+                  a.btn.btn-download.btn-lg(href='doc/Resume.docx')
+                    i.fa.fa-file-word-o.fa-fw
+                    | DOC
+                li.list-inline-item
+                  a.btn.btn-download.btn-lg(href='doc/Resume.odt')
+                    i.fa.fa-file-text-o.fa-fw
+                    | ODT
     // Contact Section
     section#contact.container.content-section.text-xs-center
-      .row
-        .col-md-8.offset-md-2
+      .row.flex-items-xs-center
+        .col-md-8
           h2 Contact Bluestealth
           p
             | Feel free to email me about potential job offers, comments about the site, or just to say hi.
@@ -88,4 +89,7 @@ html(lang='en')
               a.btn.btn-secondary.btn-lg(href='https://twitter.com/bluestealth001')
                 i.fa.fa-twitter.fa-fw
                 span.network-name Twitter
-    include ./footer.pug
+    footer
+      include ./footer.pug
+      //Page Specific Javascript
+      script(src='js/index.js')
