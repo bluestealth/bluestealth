@@ -19,9 +19,9 @@ a {
     text-transform: uppercase;
     background-color: black;
     .navbar-brand {
-    	span {
+        span {
           font-weight: 400;
-    	}
+        }
         font-weight: 700;
         &:focus {
             outline: none;
@@ -57,10 +57,10 @@ a {
     padding: 100px 0;
     text-align: center;
     @media(max-width:480px) {
-    	background: url(../img/intro-bg-sm.jpg) no-repeat center center scroll;
+        background: url(../img/intro-bg-sm.jpg) no-repeat center center scroll;
     }
-    @media(max-width:640px) {    
-    	background: url(../img/intro-bg-md.jpg) no-repeat center center scroll;
+    @media(max-width:640px) {
+        background: url(../img/intro-bg-md.jpg) no-repeat center center scroll;
     }
     @media(max-width:1024px) {
         background: url(../img/intro-bg-lg.jpg) no-repeat center center scroll;
@@ -125,7 +125,7 @@ a {
     }
 }
 
-@keyframes pulse {    
+@keyframes pulse {
     0% {
         transform: scale(1);
         transform: scale(1);
@@ -156,10 +156,10 @@ section {
         text-shadow: 0 0 10px black;
     }
     @media(max-width:480px) {
-    	background: url(../img/downloads-bg-sm.jpg) no-repeat center center scroll;
+        background: url(../img/downloads-bg-sm.jpg) no-repeat center center scroll;
     }
-    @media(max-width:640px) {    
-    	background: url(../img/downloads-bg-md.jpg) no-repeat center center scroll;
+    @media(max-width:640px) {
+        background: url(../img/downloads-bg-md.jpg) no-repeat center center scroll;
     }
     @media(max-width:1024px) {
         background: url(../img/downloads-bg-lg.jpg) no-repeat center center scroll;
@@ -169,14 +169,11 @@ section {
     }
     background-color: black;
     background-size: cover;
-   .container {
-   
-   }
-   	.btn {
-		    @media(max-width: map-get($grid-breakpoints, sm)) {
-		    	margin-top: 20px;
-		    }
-	}
+    .btn {
+        @media(max-width: map-get($grid-breakpoints, sm)) {
+            margin-top: 20px;
+        }
+    }
 }
 
 .btn {
@@ -185,10 +182,10 @@ section {
 }
 
 .btn-social {
-	span {
-		margin-left: 5px;
-	}
-	margin-top: 10px;
+    span {
+        margin-left: 5px;
+    }
+    margin-top: 10px;
     border: 1px solid $brand-primary;
     color: $brand-primary;
     background-color: transparent;
