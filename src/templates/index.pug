@@ -2,22 +2,23 @@ doctype html
 html(lang='en')
   head
     include ./head.pug
-  body#page-top(data-spy='scroll', data-target='.navbar-fixed-top')
+  body#page-top(data-spy='scroll', data-target='#navtop')
     // Navigation
-    nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
+    nav.navbar.navbar-dark.navbar-custom.navbar-fixed-top(role='navigation')#navtop
       .container
         .navbar-nav
-          button.navbar-toggler.hidden-sm-up(type="button",data-toggle="collapse",data-target="#navbarLinks",aria-controls="navbarLinks",aria-expanded="false",aria-label="Toggle navigation")
-            i.fa.fa-bars
           a.navbar-brand.page-scroll(href='#page-top')
             i.fa.fa-home
             span.light Home
+          button.navbar-toggler.hidden-sm-up.pull-xs-right(type="button",data-toggle="collapse",data-target="#navbarLinks",aria-controls="navbarLinks",aria-expanded="false",aria-label="Toggle navigation")
+            i.fa.fa-bars
         // Collect the nav links, forms, and other content for toggling
-        ul(class="nav navbar-nav collapse navbar-toggleable-xs pull-xs-right")#navbarLinks
-          li.nav-item
-            a.nav-link.page-scroll(href='#resume') Resume
-          li.nav-item
-            a.nav-link.page-scroll(href='#contact') Contact
+        div.collapse.navbar-toggleable-xs.pull-xs-right#navbarLinks
+          ul(class="nav navbar-nav", role="tablist")
+            li.nav-item
+              a.nav-link.page-scroll(href='#resume') Resume
+            li.nav-item
+              a.nav-link.page-scroll(href='#contact') Contact
     // Intro Header
     header.intro
       .intro-body
