@@ -2,9 +2,13 @@
   "name": "bluestealth_website",
   "version": "0.0.1",
   "description": "Bluestealth.pw",
+  "homepage": "https://www.bluestealth.pw",
   "scripts": {},
   "author": "Michael Ryan Dempsey",
-  "license": "apache-2.0",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  },
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.4",
     "font-awesome": "^4.6.3",
@@ -20,5 +24,9 @@
     "gulp-sitemap": "^4.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "yamljs": "^0.2.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bluestealth/bluestealth.git"
   }
 }
